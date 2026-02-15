@@ -4,60 +4,169 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Proper Shot Coffee</title>
+
 <style>
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #111;
-  color: white;
-  text-align: center;
+    margin: 0;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f8f5f2;
+    color: #3e2c23;
+}
+
+header {
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+}
+
+header h1 {
+    font-size: 1.3rem;
+    letter-spacing: 2px;
+}
+
+nav a {
+    text-decoration: none;
+    margin-left: 20px;
+    color: #3e2c23;
+    font-weight: 500;
 }
 
 .hero {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-  url('https://images.unsplash.com/photo-1509042239860-f550ce710b93') center/cover;
+    height: 90vh;
+    background: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)),
+    url('https://images.unsplash.com/photo-1509042239860-f550ce710b93');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
-h1 {
-  font-size: 3rem;
-  margin-bottom: 10px;
+.hero h2 {
+    font-size: 3rem;
+    margin: 0;
 }
 
-p {
-  font-size: 1.2rem;
-  margin-bottom: 20px;
+.hero p {
+    font-size: 1.2rem;
+    margin: 15px 0;
 }
 
-button {
-  padding: 12px 25px;
-  font-size: 1rem;
-  border: none;
-  background: #c59d5f;
-  color: black;
-  cursor: pointer;
-  border-radius: 5px;
+.button {
+    padding: 12px 25px;
+    background-color: #8b5e3c;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 15px;
+    display: inline-block;
 }
 
-button:hover {
-  background: #e6b566;
+.section {
+    padding: 80px 20px;
+    max-width: 1000px;
+    margin: auto;
+    text-align: center;
+}
+
+.section h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.services {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    width: 280px;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 500px;
+    margin: auto;
+}
+
+input, textarea {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+footer {
+    padding: 30px;
+    background: #3e2c23;
+    color: white;
+    text-align: center;
 }
 </style>
 </head>
 
 <body>
 
-<div class="hero">
-  <h1>Proper Shot Coffee</h1>
-  <p>Mobile Espresso Bar for Events & Private Bookings</p>
-  <a href="mailto:youremail@gmail.com">
-    <button>Book Us</button>
-  </a>
-</div>
+<header>
+    <h1>PROPER SHOT COFFEE</h1>
+    <nav>
+        <a href="#services">Services</a>
+        <a href="#booking">Book</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h2>Mobile Espresso Bar</h2>
+    <p>Premium coffee experience for weddings, corporate & private events.</p>
+    <a href="#booking" class="button">Book Your Event</a>
+</section>
+
+<section class="section" id="services">
+    <h3>Our Services</h3>
+    <div class="services">
+        <div class="card">
+            <h4>Weddings</h4>
+            <p>Elegant espresso bar setup for your special day.</p>
+        </div>
+        <div class="card">
+            <h4>Corporate Events</h4>
+            <p>Professional coffee catering for businesses.</p>
+        </div>
+        <div class="card">
+            <h4>Private Parties</h4>
+            <p>Custom drink menus tailored to your event.</p>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="booking">
+    <h3>Request a Quote</h3>
+    <form action="https://formspree.io/f/yourID" method="POST">
+        <input type="text" name="name" placeholder="Full Name" required>
+        <input type="email" name="email" placeholder="Email Address" required>
+        <input type="text" name="date" placeholder="Event Date">
+        <input type="text" name="guests" placeholder="Number of Guests">
+        <textarea name="message" rows="4" placeholder="Tell us about your event"></textarea>
+        <button class="button" type="submit">Send Request</button>
+    </form>
+</section>
+
+<footer id="contact">
+    <p>Serving Tampa Bay</p>
+    <p>Email: info@propershotcoffee.com</p>
+</footer>
 
 </body>
 </html>
