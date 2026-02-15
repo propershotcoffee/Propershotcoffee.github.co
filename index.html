@@ -28,11 +28,17 @@ header h1 {
 }
     
 
+nav a 
+    nav {
+  display:flex;
+  gap:25px;
+  align-items:center;
+}
+
 nav a {
-    text-decoration:none;
-    margin-left:25px;
-    color:#3e2f25;
-    font-weight:500;
+  text-decoration:none;
+  color:#3e2f25;
+  font-weight:500;
 }
 nav {
     display: flex;
@@ -167,6 +173,31 @@ footer {
     <p><strong>Thursday:</strong> Available All Day</p>
     <p><strong>Friday:</strong> Available from 4PM</p>
     <p><strong>Saturday:</strong> Available All Day</p>
+</section>
+
+    <section class="section" id="booking">
+  <h2>Book Your Event</h2>
+
+  <p style="text-align:center; margin-bottom:30px;">
+    We are currently preparing our cart. 
+    Accepting bookings for upcoming dates.
+  </p>
+
+  <form action="https://formspree.io/f/yourcode" method="POST">
+    
+    <input type="text" name="name" placeholder="Your Name" required>
+
+    <input type="email" name="email" placeholder="Your Email" required>
+
+    <input type="text" name="event" placeholder="Type of Event">
+
+    <input type="text" name="date" placeholder="Event Date">
+
+    <textarea name="message" placeholder="Tell us about your event"></textarea>
+
+    <button type="submit" class="button">Request a Quote</button>
+
+  </form>
 </section>
 
 <footer id="contact">
