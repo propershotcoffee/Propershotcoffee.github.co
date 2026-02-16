@@ -30,9 +30,15 @@ header h1 {
 
 nav a 
     nav {
-  display:flex;
-  gap:14px;
-  align-items:center;
+  display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: #3e2f25;
+    font-weight: 500;
 }
 
 nav a {
@@ -117,6 +123,47 @@ footer {
     color:white;
     text-align:center;
     padding:30px;
+}
+    #booking {
+    padding: 80px 10%;
+    background: #f5f1ea;
+    text-align: center;
+}
+
+#booking h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+#booking p {
+    margin-bottom: 40px;
+    color: #6b5b4d;
+}
+
+form {
+    max-width: 700px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+form input,
+form textarea {
+    padding: 14px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 15px;
+}
+
+form textarea {
+    grid-column: span 2;
+    min-height: 100px;
+}
+
+form button {
+    grid-column: span 2;
+    margin-top: 20px;
 }
 
 </style>
