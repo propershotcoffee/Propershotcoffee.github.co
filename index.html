@@ -2,263 +2,34 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Proper Shot Coffee</title>
-
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Proper Shot Coffee is a premium mobile espresso bar for weddings, corporate events, private parties and pop-ups throughout Tampa Bay.">
+<title>Proper Shot Coffee | Mobile Espresso Bar in Tampa Bay</title>
 <style>
-body {
-    margin:0;
-    font-family: 'Segoe UI', sans-serif;
-    background:#f5f1ea;
-    color:#3e2f25;
-}
-
-header {
-    background:#ffff;
-    padding:15px 8%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    box-shadow:0 2px 10px rgba(0,0,0.05);
-}
-
-header h1 {
-    font-size:20px;
-    letter-spacing:2px;
-}
-    
-
- nav {
-    display: flex;
-    gap: 15px;
-    align-items: center;
-}
-
-nav a {
-    text-decoration: none;
-    color: #3e2f25;
-    font-weight: 500;
-}
-
-nav a {
-  text-decoration:none;
-  color:#3e2f25;
-  font-weight:500;
-}
-nav {
-    display: flex;
-    align-items: center;
-}
-.hero {
-    height:85vh;
-    background:linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.35)),
-    url('https://images.unsplash.com/photo-1509042239860-f550ce710b93');
-    background-size:cover;
-    background-position:center;
-    display:flex;
-    justify-content:center;
-    align-items:flex-start;
-    text-align:center;
-    color:white;
-    padding: 200px;
-}
-
-.hero h2 {
-    font-size:48px;
-    margin-bottom:15px;
-}
-
-.hero p {
-    font-size:18px;
-    max-width:600px;
-    margin:auto;
-}
-
-.button {
-    display:inline-block;
-    margin-top:25px;
-    padding:14px 30px;
-    background:#6b4f3b;
-    color:white;
-    border-radius:6px;
-    text-decoration:none;
-}
-
-.section {
-    padding:80px 10%;
-    text-align:center;
-}
-
-.cards {
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:30px;
-    margin-top:40px;
-}
-
-.card {
-    background:white;
-    padding:30px;
-    width:200px;
-    border-radius:12px;
-    box-shadow:0 8px 20px rgba(0,0,0,0.08);
-}
-
-.card img {
-    width:100%;
-    border-radius:8px;
-    margin-bottom:15px;
-}
-
-.availability {
-    background:#e7efe9;
-    padding:60px 10%;
-    text-align:center;
-}
-
-footer {
-    background:#3e2f25;
-    color:white;
-    text-align:center;
-    padding:30px;
-}
-    #booking {
-    padding: 80px 10%;
-    background: #f5f1ea;
-    text-align: left;
-}
-
-#booking h2 {
-    font-size: 32px;
-    margin-bottom: 15px;
-}
-
-#booking p {
-    margin-bottom: 40px;
-    color: #6b5b4d;
-}
-
-form {
-    max-width: 600px;
-    margin:0;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-}
-
-form input,
-form textarea {
-    padding: 14px;
-    border-radius: 8px;
-    border: 1px solid #ddd;
-    font-size: 15px;
-}
-
-form textarea {
-    grid-column: span 2;
-    min-height: 100px;
-}
-
-form button {
-    grid-column: span 2;
-    margin-top: 20px;
-}
-
+:root{--cream:#f4f0e7;--paper:#fffdf8;--green:#18372f;--soft:#dfe8e1;--brown:#654a39;--ink:#1d211f;--muted:#696b65;--line:rgba(24,55,47,.15);--shadow:0 18px 50px rgba(24,35,31,.12)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.6}img{display:block;width:100%}a{color:inherit}h1,h2,h3,p{margin-top:0}h1,h2,h3{font-family:Georgia,"Times New Roman",serif;font-weight:500;line-height:1.08}.wrap{width:min(1160px,calc(100% - 40px));margin:auto}.section{padding:96px 0}.eyebrow{margin-bottom:12px;color:var(--brown);font-size:.76rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase}.title{max-width:700px;margin:0 auto 44px;text-align:center}.title h2{margin-bottom:14px;color:var(--green);font-size:clamp(2.1rem,5vw,3.6rem)}.title p{color:var(--muted)}
+header{position:sticky;top:0;z-index:20;border-bottom:1px solid var(--line);background:rgba(255,253,248,.94);backdrop-filter:blur(12px)}.nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{text-decoration:none;color:var(--green);font-family:Georgia,serif;font-size:1.18rem;letter-spacing:.13em;white-space:nowrap}.links{display:flex;align-items:center;gap:24px}.links a{text-decoration:none;font-size:.92rem;font-weight:650}.links a:hover{color:var(--brown)}.links .quote{padding:10px 17px;border-radius:999px;background:var(--green);color:#fff}
+.hero{min-height:calc(100vh - 76px);display:grid;grid-template-columns:44% 56%;overflow:hidden;background:var(--green);color:#fff}.hero-copy{padding:clamp(64px,9vw,128px) clamp(30px,7vw,100px);display:flex;flex-direction:column;justify-content:center}.hero .eyebrow{color:#d6c9b6}.hero h1{max-width:650px;margin-bottom:22px;font-size:clamp(3rem,6.4vw,6.1rem)}.hero p{max-width:560px;margin-bottom:0;color:rgba(255,255,255,.8);font-size:1.1rem}.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}.button{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:13px 24px;border:1px solid transparent;border-radius:999px;background:var(--brown);color:#fff;font:inherit;font-weight:750;text-decoration:none;cursor:pointer;transition:.2s}.button:hover{transform:translateY(-2px);background:#7a5b45}.button.secondary{border-color:rgba(255,255,255,.45);background:transparent}.hero-photo{min-height:620px}.hero-photo img{height:100%;object-fit:cover;object-position:center 42%}
+.experience{background:var(--paper)}.experience-grid,.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}.experience-card{padding:32px;border:1px solid var(--line);border-radius:18px;background:#fff}.number{display:grid;width:42px;height:42px;margin-bottom:24px;place-items:center;border-radius:50%;background:var(--soft);color:var(--green);font-weight:800}.experience-card h3,.service h3{margin-bottom:10px;color:var(--green);font-size:1.6rem}.experience-card p,.service p{margin-bottom:0;color:var(--muted)}
+.service{overflow:hidden;border-radius:20px;background:var(--paper);box-shadow:var(--shadow)}.service img{height:330px;object-fit:cover}.service:nth-child(1) img{object-position:center 55%}.service:nth-child(3) img{object-position:center 35%}.service-copy{padding:27px}
+.gallery{padding-top:20px}.gallery-grid{display:grid;grid-template-columns:1.2fr .8fr .8fr;grid-template-rows:285px 285px;gap:16px}.gallery figure{margin:0;overflow:hidden;border-radius:18px}.gallery figure:first-child{grid-row:1/span 2}.gallery figure:last-child{grid-column:2/span 2}.gallery img{height:100%;object-fit:cover;transition:.4s}.gallery figure:hover img{transform:scale(1.025)}
+.availability{padding:70px 0;background:var(--green);color:#fff}.availability-inner{display:grid;grid-template-columns:1fr 1.4fr;gap:60px;align-items:center}.availability h2{margin:0;font-size:clamp(2.3rem,5vw,4rem)}.schedule{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.schedule div{padding:20px;border:1px solid rgba(255,255,255,.2);border-radius:14px;background:rgba(255,255,255,.06)}.schedule strong,.schedule span{display:block}.schedule span{color:rgba(255,255,255,.72);font-size:.9rem}
+.booking{background:var(--paper)}.booking-grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:70px;align-items:start}.booking-copy{position:sticky;top:110px}.booking h2{margin-bottom:18px;color:var(--green);font-size:clamp(2.5rem,5vw,4.3rem)}.booking-copy p{color:var(--muted)}.booking-note{margin-top:28px;padding-top:24px;border-top:1px solid var(--line)}form{display:grid;grid-template-columns:1fr 1fr;gap:18px;padding:34px;border:1px solid var(--line);border-radius:22px;background:#fff;box-shadow:var(--shadow)}label{display:grid;gap:7px;color:var(--green);font-size:.83rem;font-weight:750}.full{grid-column:1/-1}input,select,textarea{width:100%;padding:14px 15px;border:1px solid #d7d8d2;border-radius:9px;background:#fff;color:var(--ink);font:inherit}input:focus,select:focus,textarea:focus{outline:2px solid rgba(24,55,47,.22);border-color:var(--green)}textarea{min-height:125px;resize:vertical}form .button{width:100%}
+footer{padding:46px 0;background:#111916;color:#fff}.footer-inner{display:flex;align-items:end;justify-content:space-between;gap:32px}footer h2{margin-bottom:10px;font-size:1.7rem;letter-spacing:.08em}footer p{margin-bottom:5px;color:rgba(255,255,255,.7)}.footer-links{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:18px}.footer-links a{text-decoration:none}.copyright{margin-top:28px;padding-top:22px;border-top:1px solid rgba(255,255,255,.12);font-size:.82rem}
+@media(max-width:900px){.hero{min-height:auto;grid-template-columns:1fr}.hero-copy{padding:72px 30px}.hero-photo{min-height:620px}.experience-grid,.services-grid{grid-template-columns:1fr}.service{display:grid;grid-template-columns:.9fr 1.1fr}.service img{height:100%;min-height:280px}.availability-inner,.booking-grid{grid-template-columns:1fr;gap:38px}.booking-copy{position:static}.gallery-grid{grid-template-columns:1fr 1fr}.gallery figure:first-child{grid-row:auto}.gallery figure:last-child{grid-column:1/-1}}
+@media(max-width:650px){.wrap{width:min(100% - 28px,1160px)}.section{padding:70px 0}.nav{min-height:66px}.brand{font-size:.96rem}.links a:not(.quote){display:none}.links .quote{padding:9px 14px;font-size:.82rem}.hero-copy{padding:58px 22px 52px}.hero h1{font-size:clamp(2.7rem,14vw,4.2rem)}.hero-photo{min-height:470px}.hero-photo img{object-position:center 36%}.actions{flex-direction:column}.service{display:block}.service img{height:310px;min-height:0}.gallery-grid{grid-template-columns:1fr;grid-template-rows:repeat(4,340px)}.gallery figure:last-child{grid-column:auto}.schedule{grid-template-columns:1fr}form{grid-template-columns:1fr;padding:22px}.full{grid-column:auto}.footer-inner{align-items:flex-start;flex-direction:column}.footer-links{justify-content:flex-start}}
 </style>
 </head>
-
 <body>
-
-<header>
-    <h1>PROPER SHOT COFFEE</h1>
-    <nav>
-        <a href="#services">Services</a>
-        <a href="#availability">Availability</a>
-        <a href="#book">Book</a>
-        <a href="#contact">Contact</a>
-    </nav>
-</header>
-
-<section class="hero">
-    <div>
-        <h2> Mobile Espresso Bar</h2>
-          <p class="launching">
-    Launching soon — Now booking for events.
-  </p>
-        <p>Premium coffee experience for weddings, corporate events & private celebrations.</p>
-        <a href="#contact" class="button">Book Your Event</a>
-    </div>
-</section>
-    
-<section class="section" id="services">
-    <h2>Our Services</h2>
-    <div class="cards">
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486">
-            <h3>Weddings</h3>
-            <p>Elegant espresso bar setup for your special day.</p>
-        </div>
-
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93">
-            <h3>Corporate Events</h3>
-            <p>Professional coffee catering for businesses.</p>
-        </div>
-
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348">
-            <h3>Private Parties</h3>
-            <p>Custom drink menus tailored to your event.</p>
-        </div>
-    </div>
-</section>
-
-<section class="availability" id="availability">
-    <h2>Availability</h2>
-    <p><strong>Thursday:</strong> Available All Day</p>
-    <p><strong>Friday:</strong> Available from 4PM</p>
-    <p><strong>Saturday:</strong> Available All Day</p>
-</section>
-
-    <section class="section" id="book">
-  <h2>Book Your Event</h2>
-
-  <p style="text-align:center; margin-bottom:30px;">
-    We are currently preparing our cart. 
-    Accepting bookings for upcoming dates.
-  </p>
-
-  <form name="booking" method="POST" data-netlify="true" action="/thanks.html">
-  <input type="hidden" name="form-name" value="booking" />
-
-  <input type="text" name="name" placeholder="Your Name" required>
-  <input type="email" name="email" placeholder="Your Email" required>
-  <input type="number" name="guests" placeholder="Guests">
-  <input type="text" name="date" placeholder="Event Date">
-  <textarea name="message" placeholder="Tell us about your event"></textarea>
-
-  <button type="submit" class="button">Request Booking</button>
-</form>
-</section>
-
-<footer id="contact">
-    <h3>Contact Us</h3>
-    <p>Serving Tampa Bay Area</p>
-    <p>Email: propershotcoffee@gmail.com</p>
-</footer>
-    <footer>
-    <p>© 2026 <a href="https://propershotcoffee.com" style="color: inherit; text-decoration:none;">propershotcoffee.com</a>. All Rights Reserved.</p>
-</footer>
-    <form name="booking" data-netlify="true" hidden>
-  <input type="hidden" name="form-name" value="booking" />
-  <input type="text" name="name" />
-  <input type="email" name="email" />
-</form>
-    <form name="booking" data-netlify="true" hidden>
-  <input type="hidden" name="form-name" value="booking" />
-  <input type="text" name="name" />
-  <input type="email" name="email" />
-</form>
+<header><div class="wrap nav"><a class="brand" href="#top">PROPER SHOT COFFEE</a><nav class="links" aria-label="Main navigation"><a href="#services">Services</a><a href="#gallery">Gallery</a><a href="#availability">Availability</a><a class="quote" href="#book">Get a Quote</a></nav></div></header>
+<main id="top">
+<section class="hero"><div class="hero-copy"><p class="eyebrow">Premium Mobile Espresso Bar · Tampa Bay</p><h1>Coffee made for the moment.</h1><p>Handcrafted espresso, polished service, and a beautiful mobile bar for weddings, corporate events, private celebrations, and pop-ups.</p><div class="actions"><a class="button" href="#book">Book Your Event</a><a class="button secondary" href="#gallery">See the Experience</a></div></div><div class="hero-photo"><img src="assets/images/hero-proper-shot.jpeg" alt="Proper Shot Coffee mobile espresso cart and barista at an event"></div></section>
+<section class="section experience"><div class="wrap"><div class="title"><p class="eyebrow">The Proper Shot Experience</p><h2>More than coffee. A complete experience.</h2><p>Every detail is designed to feel personal, professional, and effortless for you and your guests.</p></div><div class="experience-grid"><article class="experience-card"><span class="number">01</span><h3>Fresh Espresso</h3><p>Quality espresso drinks handcrafted on-site and served at their best.</p></article><article class="experience-card"><span class="number">02</span><h3>Personalized Menu</h3><p>A thoughtful drink selection tailored to your event and your guests.</p></article><article class="experience-card"><span class="number">03</span><h3>Professional Setup</h3><p>A clean, polished mobile bar that elevates the look and feel of your event.</p></article></div></div></section>
+<section class="section" id="services"><div class="wrap"><div class="title"><p class="eyebrow">What We Serve</p><h2>Built for every kind of gathering.</h2></div><div class="services-grid"><article class="service"><img src="assets/images/wedding-cart.jpeg" alt="Proper Shot espresso bar styled at an elegant wedding venue" loading="lazy"><div class="service-copy"><h3>Weddings</h3><p>An elegant espresso bar and memorable service for your celebration.</p></div></article><article class="service"><img src="assets/images/cart-at-event.jpeg" alt="Proper Shot mobile coffee cart serving an indoor event" loading="lazy"><div class="service-copy"><h3>Corporate Events</h3><p>Professional coffee catering for offices, launches, and brand events.</p></div></article><article class="service"><img src="assets/images/customer-service.jpeg" alt="Proper Shot barista handing a freshly made drink to a guest" loading="lazy"><div class="service-copy"><h3>Private Parties</h3><p>Custom drink menus and genuine hospitality tailored to your occasion.</p></div></article></div></div></section>
+<section class="section gallery" id="gallery"><div class="wrap"><div class="title"><p class="eyebrow">Recent Events</p><h2>Proper shots. Happy guests.</h2></div><div class="gallery-grid"><figure><img src="assets/images/pop-up-service.jpeg" alt="Guests enjoying drinks at a Proper Shot pop-up" loading="lazy"></figure><figure><img src="assets/images/signature-drinks.jpeg" alt="Three signature iced drinks by Proper Shot Coffee" loading="lazy"></figure><figure><img src="assets/images/customer-service.jpeg" alt="Barista serving a Proper Shot drink to a guest" loading="lazy"></figure><figure><img src="assets/images/wedding-cart.jpeg" alt="Proper Shot Coffee cart ready for event service" loading="lazy"></figure></div></div></section>
+<section class="availability" id="availability"><div class="wrap availability-inner"><div><p class="eyebrow" style="color:#d6c9b6">Now Booking</p><h2>Tampa Bay events.</h2></div><div class="schedule"><div><strong>Thursday</strong><span>Available all day</span></div><div><strong>Friday</strong><span>Available after 4 PM</span></div><div><strong>Saturday</strong><span>Available all day</span></div></div></div></section>
+<section class="section booking" id="book"><div class="wrap booking-grid"><div class="booking-copy"><p class="eyebrow">Get a Quote</p><h2>Let’s make your event memorable.</h2><p>Tell us a little about your event. We’ll review the details and get back to you with availability and the right setup for your guest count.</p><div class="booking-note"><strong>Serving Tampa Bay</strong><br><a href="mailto:propershotcoffee@gmail.com">propershotcoffee@gmail.com</a></div></div><form name="booking" method="POST" data-netlify="true" action="/thanks.html"><input type="hidden" name="form-name" value="booking"><label>Full Name<input type="text" name="name" autocomplete="name" required></label><label>Email Address<input type="email" name="email" autocomplete="email" required></label><label>Phone Number<input type="tel" name="phone" autocomplete="tel" required></label><label>Event Date<input type="date" name="date" required></label><label class="full">Event Location<input type="text" name="location" placeholder="Venue or city" required></label><label>Event Type<select name="event-type" required><option value="" selected disabled>Select one</option><option>Wedding</option><option>Corporate Event</option><option>Private Party</option><option>Pop-Up or Market</option><option>Other</option></select></label><label>Estimated Guest Count<input type="number" name="guests" min="1" required></label><label class="full">Tell Us About Your Event<textarea name="message" placeholder="Timing, drink preferences, or anything else we should know"></textarea></label><div class="full"><button type="submit" class="button">Request a Quote</button></div></form></div></section>
+</main>
+<footer id="contact"><div class="wrap"><div class="footer-inner"><div><h2>PROPER SHOT COFFEE</h2><p>Premium mobile espresso bar</p><p>Tampa Bay, Florida</p></div><div class="footer-links"><a href="mailto:propershotcoffee@gmail.com">Email</a><a href="https://www.instagram.com/propershot.coffee/" target="_blank" rel="noopener">Instagram @propershot.coffee</a><a href="#book">Get a Quote</a></div></div><p class="copyright">© 2026 Proper Shot Coffee. All rights reserved.</p></div></footer>
 </body>
 </html>
