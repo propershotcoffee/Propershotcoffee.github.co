@@ -650,27 +650,32 @@ footer p{margin-bottom:5px;color:var(--muted)}
   showStep(0);
 })();
 
-  var aboutModal=document.getElementById('aboutModal');
-  var aboutTriggers=document.querySelectorAll('.about-trigger');
-  var aboutClose=aboutModal?aboutModal.querySelector('.about-close'):null;
-  function openAbout(e){
-    if(e){e.preventDefault();}
-    if(!aboutModal){return;}
-    aboutModal.classList.add('open');
-    aboutModal.setAttribute('aria-hidden','false');
-    document.body.style.overflow='hidden';
-  }
-  function closeAbout(){
-    if(!aboutModal){return;}
-    aboutModal.classList.remove('open');
-    aboutModal.setAttribute('aria-hidden','true');
-    document.body.style.overflow='';
-  }
-  aboutTriggers.forEach(function(link){link.addEventListener('click',openAbout);});
-  if(aboutClose){aboutClose.addEventListener('click',closeAbout);}
-  if(aboutModal){aboutModal.addEventListener('click',function(e){if(e.target===aboutModal){closeAbout();}});}
-  document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeAbout();}});
-  if(window.location.hash==='#about'){openAbout();}
+  document.addEventListener('DOMContentLoaded',function(){
+    var aboutModal=document.getElementById('aboutModal');
+    var aboutTriggers=document.querySelectorAll('.about-trigger');
+    var aboutClose=aboutModal?aboutModal.querySelector('.about-close'):null;
+
+    function openAbout(e){
+      if(e){e.preventDefault();}
+      if(!aboutModal){return;}
+      aboutModal.classList.add('open');
+      aboutModal.setAttribute('aria-hidden','false');
+      document.body.style.overflow='hidden';
+    }
+
+    function closeAbout(){
+      if(!aboutModal){return;}
+      aboutModal.classList.remove('open');
+      aboutModal.setAttribute('aria-hidden','true');
+      document.body.style.overflow='';
+    }
+
+    aboutTriggers.forEach(function(link){link.addEventListener('click',openAbout);});
+    if(aboutClose){aboutClose.addEventListener('click',closeAbout);}
+    if(aboutModal){aboutModal.addEventListener('click',function(e){if(e.target===aboutModal){closeAbout();}});}
+    document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeAbout();}});
+    if(window.location.hash==='#about'){openAbout();}
+  });
 
 </script>
 
