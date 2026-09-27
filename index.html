@@ -54,8 +54,8 @@ header{position:sticky;top:0;z-index:50;border-bottom:1px solid rgba(23,59,50,.1
 .button.secondary:hover{background:#fff}
 .hero-trust{display:flex;flex-wrap:wrap;gap:8px 16px;margin-top:26px;color:#7b7d77;font-size:.78rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
 .hero-trust span:not(:last-child)::after{content:"·";margin-left:16px}
-.hero-photo{min-height:650px;background:#ece7df;overflow:hidden}
-.hero-photo img{height:100%;object-fit:cover;object-position:center 20%;transform:none}
+.hero-photo{min-height:650px;background:#ece7df;overflow:hidden;display:flex;align-items:center;justify-content:center;padding:28px}
+.hero-photo img{width:100%;height:100%;object-fit:contain;object-position:center center;transform:none}
 
 .serve{background:var(--white)}
 .card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
@@ -166,7 +166,7 @@ footer p{margin-bottom:5px;color:var(--muted)}
 
 @media(max-width:900px){
   .hero{grid-template-columns:1fr;min-height:auto}
-  .hero-photo{order:1;min-height:620px}
+  .hero-photo{order:1;min-height:620px;padding:22px}
   .hero-copy{order:2;padding:58px 30px 66px}
   .card-grid,.events-grid{grid-template-columns:1fr}
   .event-card{min-height:430px}
@@ -184,8 +184,8 @@ footer p{margin-bottom:5px;color:var(--muted)}
   .brand{font-size:.96rem}
   .links a:not(.quote){display:none}
   .links .quote{padding:9px 14px;font-size:.82rem}
-  .hero-photo{min-height:68vh;max-height:720px}
-  .hero-photo img{object-position:center 18%;transform:none}
+  .hero-photo{min-height:560px;max-height:none;padding:14px}
+  .hero-photo img{object-fit:contain;object-position:center center;transform:none}
   .hero-copy{padding:44px 22px 55px}
   .hero h1{font-size:clamp(2.8rem,13vw,4.15rem)}
   .actions{flex-direction:column}
@@ -217,7 +217,7 @@ footer p{margin-bottom:5px;color:var(--muted)}
     <nav class="links" aria-label="Main navigation">
       <a href="#serve">Menu</a>
       <a href="#events">Events</a>
-      <a href="/about.html">About Us</a>
+      <a href="about.html">About Us</a>
       <a href="#gallery">Gallery</a>
       <a class="quote" href="#book">Get a Quote</a>
     </nav>
@@ -281,7 +281,7 @@ footer p{margin-bottom:5px;color:var(--muted)}
 
   <section class="story-link-section">
     <div class="wrap">
-      <a class="story-link" href="/about.html">
+      <a class="story-link" href="about.html">
         <span><small>ABOUT PROPER SHOT</small><strong>Meet the story behind the cart.</strong></span>
         <b>About Us →</b>
       </a>
@@ -333,7 +333,7 @@ footer p{margin-bottom:5px;color:var(--muted)}
           <div class="progress" aria-hidden="true"><div class="progress-bar" id="progressBar"></div></div>
         </div>
 
-        <form name="booking" method="POST" data-netlify="true" action="/thanks.html" id="quoteForm">
+        <form name="booking" method="POST" data-netlify="true" action="thanks.html" id="quoteForm">
           <input type="hidden" name="form-name" value="booking">
 
           <section class="form-step active auto-advance" data-step="1">
@@ -447,7 +447,7 @@ footer p{margin-bottom:5px;color:var(--muted)}
     <div class="footer-inner">
       <div><h2>PROPER SHOT COFFEE</h2><p>Premium mobile espresso bar</p><p>Tampa Bay, Florida</p></div>
       <div class="footer-links">
-        <a href="/about.html">About Us</a>
+        <a href="about.html">About Us</a>
         <a href="mailto:propershotcoffee@gmail.com">Email</a>
         <a href="https://www.instagram.com/propershot.coffee/" target="_blank" rel="noopener">Instagram @propershot.coffee</a>
         <a href="#book">Get a Quote</a>
