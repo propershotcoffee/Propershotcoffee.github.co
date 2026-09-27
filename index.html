@@ -54,8 +54,8 @@ header{position:sticky;top:0;z-index:50;border-bottom:1px solid rgba(23,59,50,.1
 .button.secondary:hover{background:#fff}
 .hero-trust{display:flex;flex-wrap:wrap;gap:8px 16px;margin-top:26px;color:#7b7d77;font-size:.78rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
 .hero-trust span:not(:last-child)::after{content:"·";margin-left:16px}
-.hero-photo{min-height:650px;background:#ece7df;overflow:hidden;display:flex;align-items:center;justify-content:center;padding:28px}
-.hero-photo img{width:100%;height:100%;object-fit:contain;object-position:center center;transform:none}
+.hero-photo{min-height:650px;background:#ece7df;overflow:hidden}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center 52%;transform:none}
 
 .serve{background:var(--white)}
 .card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
@@ -183,7 +183,7 @@ footer p{margin-bottom:5px;color:var(--muted)}
 
 @media(max-width:900px){
   .hero{grid-template-columns:1fr;min-height:auto}
-  .hero-photo{order:1;min-height:620px;padding:22px}
+  .hero-photo{order:1;min-height:620px}
   .hero-copy{order:2;padding:58px 30px 66px}
   .card-grid,.events-grid{grid-template-columns:1fr}
   .event-card{min-height:430px}
@@ -201,8 +201,8 @@ footer p{margin-bottom:5px;color:var(--muted)}
   .brand{font-size:.96rem}
   .links a:not(.quote){display:none}
   .links .quote{padding:9px 14px;font-size:.82rem}
-  .hero-photo{min-height:560px;max-height:none;padding:14px}
-  .hero-photo img{object-fit:contain;object-position:center center;transform:none}
+  .hero-photo{min-height:620px;max-height:none}
+  .hero-photo img{object-fit:cover;object-position:center 50%;transform:none}
   .hero-copy{padding:44px 22px 55px}
   .hero h1{font-size:clamp(2.8rem,13vw,4.15rem)}
   .actions{flex-direction:column}
@@ -270,7 +270,7 @@ footer p{margin-bottom:5px;color:var(--muted)}
       <div class="hero-trust"><span>Weddings</span><span>Corporate</span><span>Private Events</span></div>
     </div>
     <div class="hero-photo">
-      <img src="/assets/images/hero-owner-sharp.webp?v=20260927-2" alt="Proper Shot Coffee barista behind the mobile espresso bar" loading="eager" fetchpriority="high">
+      <img src="assets/images/hero-premium.webp?v=20260927-3" alt="Proper Shot Coffee mobile espresso bar with the owner behind the cart" loading="eager" fetchpriority="high">
     </div>
   </section>
 
