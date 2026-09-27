@@ -82,12 +82,6 @@ header{position:sticky;top:0;z-index:50;border-bottom:1px solid rgba(23,59,50,.1
 .about-copy p:last-child{margin-bottom:0}
 .about-rule{width:64px;height:2px;margin:23px 0;background:var(--brown)}
 
-.story-link-section{padding:24px 0;background:var(--white)}
-.story-link{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:24px 28px;border:1px solid var(--line);border-radius:18px;background:var(--paper);text-decoration:none;transition:.2s}
-.story-link:hover{transform:translateY(-1px);box-shadow:var(--shadow)}
-.story-link span small{display:block;margin-bottom:4px;color:var(--brown);font-size:.7rem;font-weight:850;letter-spacing:.14em}
-.story-link span strong{color:var(--green);font-family:Georgia,"Times New Roman",serif;font-size:1.45rem;font-weight:500}
-.story-link b{color:var(--green);white-space:nowrap}
 .how{background:var(--cream)}
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
 .step-card{padding:25px;border:1px solid #dfddd6;border-radius:18px;background:rgba(255,255,255,.76)}
@@ -326,15 +320,6 @@ footer p{margin-bottom:5px;color:var(--muted)}
     </div>
   </section>
 
-  <section class="story-link-section">
-    <div class="wrap">
-      <a class="story-link" href="#about" class="about-trigger">
-        <span><small>ABOUT PROPER SHOT</small><strong>Meet the story behind the cart.</strong></span>
-        <b>About Us →</b>
-      </a>
-    </div>
-  </section>
-
   <section class="section how">
     <div class="wrap">
       <div class="title">
@@ -416,11 +401,11 @@ footer p{margin-bottom:5px;color:var(--muted)}
 
           <section class="form-step auto-advance" data-step="2">
             <h3>Choose your coffee experience.</h3>
-            <p class="step-intro">Tap one option to continue. Starting prices reflect our private-event service minimum; your final quote depends on guest count, service time, location, and customizations.</p>
+            <p class="step-intro">Choose the experience that best fits your event. Pricing is customized based on guest count, service time, location, and selected enhancements.</p>
             <div class="choice-grid">
-              <label class="choice"><input type="radio" name="service" value="Espresso Bar" required><span class="choice-body"><strong>Espresso Bar · Starting at $650</strong><span>Espresso, Americano, cappuccino & latte, with hot and iced options.</span></span></label>
-              <label class="choice"><input type="radio" name="service" value="Espresso + Matcha Bar"><span class="choice-body"><strong>Espresso + Matcha Bar · Starting at $750</strong><span>Everything in the Espresso Bar, plus hot and iced matcha.</span></span></label>
-              <label class="choice"><input type="radio" name="service" value="Signature Drinks Experience"><span class="choice-body"><strong>Signature Drinks Experience · Starting at $850</strong><span>Espresso + matcha service, plus your choice of 2 drinks from our signature or seasonal menu.</span></span></label>
+              <label class="choice"><input type="radio" name="service" value="Espresso Bar" required><span class="choice-body"><strong>Espresso Bar</strong><span>Espresso, Americano, cappuccino & latte, with hot and iced options.</span></span></label>
+              <label class="choice"><input type="radio" name="service" value="Espresso + Matcha Bar"><span class="choice-body"><strong>Espresso + Matcha Bar</strong><span>Everything in the Espresso Bar, plus hot and iced matcha.</span></span></label>
+              <label class="choice"><input type="radio" name="service" value="Signature Drinks Experience"><span class="choice-body"><strong>Signature Drinks Experience</strong><span>Espresso + matcha service, plus your choice of 2 drinks from our signature or seasonal menu.</span></span></label>
             </div>
             <div class="form-error" id="error2">Please choose a service.</div>
             <div class="form-actions"><button type="button" class="button back">Back</button><button type="button" class="button next">Continue</button></div>
@@ -486,7 +471,7 @@ footer p{margin-bottom:5px;color:var(--muted)}
                 <div class="summary-item"><small>Guests</small><strong id="sumGuests">—</strong></div>
                 <div class="summary-item"><small>Service Time</small><strong id="sumTime">—</strong></div>
               </div>
-              <div class="starting-note" id="startingPriceNote">Your selected experience has a starting price. Your final quote is confirmed after we review the complete event details and customizations.</div>
+              <div class="starting-note" id="startingPriceNote">Your quote is customized to your guest count, service time, location, and selected enhancements.</div>
             </div>
             <div class="fields">
               <label class="field">Full Name<input type="text" name="name" autocomplete="name" required></label>
@@ -612,13 +597,8 @@ footer p{margin-bottom:5px;color:var(--muted)}
     document.getElementById('sumGuests').textContent=val('guests')?val('guests')+' guests':'—';
     document.getElementById('sumTime').textContent=val('service-time')||'—';
 
-    var service=val('service');
-    var startingPrice=650;
-    if(service==='Espresso + Matcha Bar'){startingPrice=750;}
-    if(service==='Signature Drinks Experience'){startingPrice=850;}
     document.getElementById('startingPriceNote').textContent=
-      'Your selected experience starts at $'+startingPrice+
-      '. This is an event-service minimum, not a per-person price. Your final quote is confirmed after we review guest count, service time, location, and selected customizations.';
+      'Your quote is customized to your guest count, service time, location, and selected enhancements.';
   }
 
   function openBooking(){
