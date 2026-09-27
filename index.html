@@ -366,9 +366,9 @@ footer p{margin-bottom:5px;color:rgba(255,255,255,.68)}
             <h3>Choose your coffee experience.</h3>
             <p class="step-intro">This gives us the best starting point for your quote.</p>
             <div class="choice-grid">
-              <label class="choice"><input type="radio" name="service" value="Espresso Bar" required><span class="choice-body"><strong>Espresso Bar</strong><span>Fresh espresso classics served hot or iced.</span></span></label>
-              <label class="choice"><input type="radio" name="service" value="Espresso + Matcha Bar"><span class="choice-body"><strong>Espresso + Matcha Bar</strong><span>Espresso service plus matcha options for your guests.</span></span></label>
-              <label class="choice"><input type="radio" name="service" value="Signature Drinks Experience"><span class="choice-body"><strong>Signature Drinks Experience</strong><span>Espresso service with featured or event-specific signature drinks.</span></span></label>
+              <label class="choice"><input type="radio" name="service" value="Espresso Bar" required><span class="choice-body"><strong>Espresso Bar · Starting at $700</strong><span>Fresh espresso classics served hot or iced.</span></span></label>
+              <label class="choice"><input type="radio" name="service" value="Espresso + Matcha Bar"><span class="choice-body"><strong>Espresso + Matcha Bar · Starting at $800</strong><span>Espresso service plus matcha options for your guests.</span></span></label>
+              <label class="choice"><input type="radio" name="service" value="Signature Drinks Experience"><span class="choice-body"><strong>Signature Drinks Experience · Starting at $850</strong><span>Espresso service with featured or event-specific signature drinks.</span></span></label>
             </div>
             <div class="form-error" id="error2">Please choose a service.</div>
             <div class="form-actions"><button type="button" class="button back">Back</button><button type="button" class="button next">Continue</button></div>
@@ -415,14 +415,13 @@ footer p{margin-bottom:5px;color:rgba(255,255,255,.68)}
             <h3>Customize your bar.</h3>
             <p class="step-intro">Add anything you may be interested in. We’ll confirm options and pricing with you.</p>
             <div class="addons">
-              <label class="addon"><input type="checkbox" name="addon-branded-cups" value="Yes"><span><strong>Branded Cups</strong><span>Custom printed cups for your event or company.</span></span></label>
-              <label class="addon"><input type="checkbox" name="addon-logo-stickers" value="Yes"><span><strong>Logo Stickers</strong><span>Custom logo stickers applied to cups.</span></span></label>
+              <label class="addon"><input type="checkbox" name="addon-cup-branding" value="Yes"><span><strong>Cup Branding</strong><span>Custom printed cups or logo stickers. We’ll confirm the best option with you.</span></span></label>
               <label class="addon"><input type="checkbox" name="addon-custom-menu" value="Yes"><span><strong>Custom Menu</strong><span>A menu styled for your event, company, or celebration.</span></span></label>
               <label class="addon"><input type="checkbox" name="addon-signature-drink" value="Yes"><span><strong>Signature Drink</strong><span>A featured drink created for the occasion.</span></span></label>
               <label class="addon"><input type="checkbox" name="addon-cart-branding" value="Yes"><span><strong>Custom Cart Branding</strong><span>Your logo or event branding displayed on the cart front.</span></span></label>
               <label class="addon"><input type="checkbox" name="addon-extra-hour" value="Yes"><span><strong>Extra Service Hour</strong><span>Add service time beyond your base event package.</span></span></label>
             </div>
-            <div class="custom-note"><strong>Custom pricing:</strong> Branded cups and custom cart branding are quoted separately after we confirm material, quantity, artwork, and production timing.</div>
+            <div class="custom-note"><strong>Custom pricing:</strong> Cup branding and custom cart branding are quoted separately after we confirm material, quantity, artwork, and production timing.</div>
             <div class="form-actions"><button type="button" class="button back">Back</button><button type="button" class="button next">Continue</button></div>
           </section>
 
@@ -439,7 +438,7 @@ footer p{margin-bottom:5px;color:rgba(255,255,255,.68)}
                 <div class="summary-item"><small>Guests</small><strong id="sumGuests">—</strong></div>
                 <div class="summary-item"><small>Service Time</small><strong id="sumTime">—</strong></div>
               </div>
-              <div class="starting-note">Packages start at $700. Final pricing is confirmed after we review your event details and customizations.</div>
+              <div class="starting-note" id="startingPriceNote">Packages start at $700. Final pricing is confirmed after we review your event details and customizations.</div>
             </div>
             <div class="fields">
               <label class="field">Full Name<input type="text" name="name" autocomplete="name" required></label>
@@ -542,6 +541,38 @@ footer p{margin-bottom:5px;color:rgba(255,255,255,.68)}
     document.getElementById('sumLocation').textContent = val('location') || '—';
     document.getElementById('sumGuests').textContent = val('guests') ? val('guests') + ' guests' : '—';
     document.getElementById('sumTime').textContent = val('service-time') || '—';
+    const service = val('service');
+    let startingPrice = 700;
+    if(service === 'Espresso + Matcha Bar') startingPrice = 800;
+    if(service === 'Signature Drinks Experience') startingPrice = 850;
+    const priceNote = document.getElementById('startingPriceNote');
+    if(priceNote){
+      priceNote.textContent = 'Your selected experience starts at 
+
+  document.querySelectorAll('.next').forEach(btn=>btn.addEventListener('click',()=>{
+    if(validateStep()) showStep(current+1);
+  }));
+  document.querySelectorAll('.back').forEach(btn=>btn.addEventListener('click',()=>showStep(current-1)));
+
+  document.querySelectorAll('.auto-advance input[type="radio"]').forEach(radio=>{
+    radio.addEventListener('change',()=>{
+      const stepIndex = steps.indexOf(radio.closest('.form-step'));
+      if(stepIndex===current){
+        setTimeout(()=>showStep(current+1),180);
+      }
+    });
+  });
+
+  form.addEventListener('submit',function(e){
+    if(!validateStep()) e.preventDefault();
+  });
+
+  showStep(0);
+})();
+</script>
+</body>
+</html> + startingPrice + '. Final pricing is confirmed after we review guest count, service time, location, and customizations.';
+    }
   }
 
   document.querySelectorAll('.next').forEach(btn=>btn.addEventListener('click',()=>{
