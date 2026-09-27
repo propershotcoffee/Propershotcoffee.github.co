@@ -65,6 +65,14 @@ header{position:sticky;top:0;z-index:50;border-bottom:1px solid var(--line);back
 .event-copy{position:absolute;z-index:2;left:0;right:0;bottom:0;padding:28px;color:#fff}
 .event-copy h3{margin-bottom:8px;font-size:1.75rem}
 .event-copy p{margin-bottom:0;color:rgba(255,255,255,.78)}
+.about{background:var(--paper)}
+.about-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:56px;align-items:center}
+.about-photo{overflow:hidden;border-radius:22px;box-shadow:var(--shadow)}
+.about-photo img{height:540px;object-fit:cover;object-position:center}
+.about-copy h2{margin-bottom:18px;color:var(--green);font-size:clamp(2.35rem,5vw,4rem)}
+.about-copy p{color:var(--muted);font-size:1.03rem}
+.about-copy p:last-child{margin-bottom:0}
+.about-rule{width:70px;height:2px;margin:24px 0;background:var(--brown)}
 .how{background:var(--green);color:#fff}
 .how .title h2{color:#fff}
 .how .title p{color:rgba(255,255,255,.72)}
@@ -155,7 +163,7 @@ footer p{margin-bottom:5px;color:rgba(255,255,255,.68)}
   .hero-photo{min-height:600px}
   .card-grid,.events-grid{grid-template-columns:1fr}
   .event-card{min-height:430px}
-  .steps{grid-template-columns:1fr 1fr}
+  .about-grid{grid-template-columns:1fr;gap:34px}.about-photo img{height:500px}.steps{grid-template-columns:1fr 1fr}
   .price-card{grid-template-columns:1fr}
   .price{text-align:left}
   .availability-inner{grid-template-columns:1fr;gap:38px}
@@ -178,7 +186,7 @@ footer p{margin-bottom:5px;color:rgba(255,255,255,.68)}
   .actions{flex-direction:column}
   .hero-trust{gap:7px 12px}
   .hero-trust span:not(:last-child)::after{margin-left:12px}
-  .steps{grid-template-columns:1fr}
+  .about-photo img{height:390px}.steps{grid-template-columns:1fr}
   .gallery-grid{grid-template-columns:1fr;grid-template-rows:repeat(4,330px)}
   .gallery figure:last-child{grid-column:auto}
   .schedule{grid-template-columns:1fr}
@@ -276,6 +284,22 @@ footer p{margin-bottom:5px;color:rgba(255,255,255,.68)}
     </div>
   </section>
 
+  <section class="section about" id="about">
+    <div class="wrap about-grid">
+      <div class="about-photo">
+        <img src="assets/images/pop-up-service.jpeg" alt="Proper Shot Coffee serving guests at an event" loading="lazy">
+      </div>
+      <div class="about-copy">
+        <p class="eyebrow">About Proper Shot</p>
+        <h2>A polished coffee experience, built for the moments that matter.</h2>
+        <div class="about-rule"></div>
+        <p>Proper Shot was created with one goal: to bring a refined café experience directly to weddings, corporate events, and private celebrations.</p>
+        <p>For us, great coffee is only part of the experience. Every detail matters — from the quality of the espresso and the presentation of the cart to the way each guest is welcomed and served.</p>
+        <p>We combine thoughtfully crafted drinks, professional service, and a clean, elevated setup to create something your guests will remember long after the last cup is served.</p>
+      </div>
+    </div>
+  </section>
+
   <section class="section how">
     <div class="wrap">
       <div class="title">
@@ -298,7 +322,7 @@ footer p{margin-bottom:5px;color:rgba(255,255,255,.68)}
         <div>
           <p class="eyebrow">Pricing</p>
           <h2>Packages starting at $700.</h2>
-          <p>Final pricing depends on guest count, service time, location, and selected customizations. Custom branding is quoted separately after we confirm the details.</p>
+          <p>Your final quote is prepared after we review guest count, service time, location, and selected customizations. Custom branding is quoted separately after we confirm the details.</p>
         </div>
         <div class="price"><small>Starting at</small><strong>$700</strong></div>
       </div>
@@ -571,7 +595,7 @@ footer p{margin-bottom:5px;color:rgba(255,255,255,.68)}
 })();
 </script>
 </body>
-</html> + startingPrice + '. Final pricing is confirmed after we review guest count, service time, location, and customizations.';
+</html> + startingPrice + '. Your final quote is confirmed after we review guest count, service time, location, and customizations.';
     }
   }
 
