@@ -103,7 +103,24 @@ header{position:sticky;top:0;z-index:50;border-bottom:1px solid rgba(23,59,50,.1
 .gallery img{height:100%;object-fit:cover;transition:.35s}
 .gallery figure:hover img{transform:scale(1.02)}
 
-.booking{background:var(--cream)}
+.booking{padding:0 0 92px;background:#fff;scroll-margin-top:76px}
+.booking-intro{position:relative;min-height:650px;display:flex;align-items:flex-end;overflow:hidden;background:#202823}
+.booking-intro>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 47%}
+.booking-intro::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(13,25,21,.82) 0%,rgba(13,25,21,.55) 42%,rgba(13,25,21,.18) 70%,rgba(13,25,21,.24) 100%)}
+.booking-intro-content{position:relative;z-index:2;width:min(1160px,calc(100% - 40px));margin:auto;padding:86px 0 74px;color:#fff}
+.booking-intro-content .eyebrow{color:#dbcbb8}
+.booking-intro-content h2{max-width:720px;margin-bottom:19px;color:#fff;font-size:clamp(3rem,6vw,5.4rem)}
+.booking-intro-content p{max-width:610px;margin-bottom:0;color:rgba(255,255,255,.84);font-size:1.08rem}
+.booking-start{margin-top:30px;background:#f7f3ec;color:var(--green)}
+.booking-start:hover{background:#fff;color:var(--green)}
+.booking-meta{display:flex;flex-wrap:wrap;gap:9px 20px;margin-top:28px;color:rgba(255,255,255,.78);font-size:.76rem;font-weight:850;letter-spacing:.08em;text-transform:uppercase}
+.booking-meta span:not(:last-child)::after{content:"·";margin-left:20px;color:#dbcbb8}
+.experience-strip{border-bottom:1px solid var(--line);background:var(--paper)}
+.experience-strip-inner{display:grid;grid-template-columns:repeat(5,1fr);gap:0}
+.experience-strip span{padding:17px 12px;text-align:center;color:var(--green);font-size:.76rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase}
+.experience-strip span+span{border-left:1px solid var(--line)}
+.booking-builder{display:none;padding-top:64px}
+.booking-builder.open{display:block}
 .booking-head{max-width:760px;margin:0 auto 34px;text-align:center}
 .booking-head h2{margin-bottom:13px;color:var(--green);font-size:clamp(2.5rem,5vw,4.2rem)}
 .booking-head p{margin-bottom:0;color:var(--muted)}
@@ -195,6 +212,22 @@ footer p{margin-bottom:5px;color:var(--muted)}
   .steps{grid-template-columns:1fr}
   .gallery-grid{grid-template-columns:1fr;grid-template-rows:repeat(4,320px)}
   .gallery figure:last-child{grid-column:auto}
+  .booking{padding-bottom:66px}
+  .booking-intro{min-height:74vh}
+  .booking-intro>img{object-position:center 50%}
+  .booking-intro::after{background:linear-gradient(to top,rgba(13,25,21,.88) 0%,rgba(13,25,21,.58) 50%,rgba(13,25,21,.18) 100%)}
+  .booking-intro-content{width:min(100% - 28px,1160px);padding:54px 0 42px}
+  .booking-intro-content h2{font-size:clamp(2.75rem,12vw,4rem)}
+  .booking-start{width:100%}
+  .booking-meta{gap:7px 10px;font-size:.68rem}
+  .booking-meta span:not(:last-child)::after{margin-left:10px}
+  .experience-strip-inner{grid-template-columns:1fr 1fr}
+  .experience-strip span{padding:13px 8px;font-size:.68rem}
+  .experience-strip span+span{border-left:0}
+  .experience-strip span:nth-child(even){border-left:1px solid var(--line)}
+  .experience-strip span:nth-child(n+3){border-top:1px solid var(--line)}
+  .experience-strip span:last-child{grid-column:1/-1;border-left:0}
+  .booking-builder{padding-top:48px}
   .wizard-top{padding:19px 20px 16px}
   form{padding:25px 20px 28px}
   .choice-grid,.fields,.addons,.summary-grid{grid-template-columns:1fr}
@@ -319,12 +352,29 @@ footer p{margin-bottom:5px;color:var(--muted)}
     </div>
   </section>
 
-  <section class="section booking" id="book">
-    <div class="wrap">
+  <section class="booking" id="book">
+    <div class="booking-intro">
+      <img src="assets/images/wedding-cart.jpeg" alt="Proper Shot mobile espresso bar styled for an elegant event" loading="eager">
+      <div class="booking-intro-content">
+        <p class="eyebrow">Plan Your Proper Shot Experience</p>
+        <h2>Bring a café experience to your event.</h2>
+        <p>Premium espresso service, matcha, signature drinks, and a polished mobile bar designed around your guests and your occasion.</p>
+        <button type="button" class="button booking-start" id="startBooking">Build Your Coffee Experience</button>
+        <div class="booking-meta"><span>Tampa Bay</span><span>Packages from $700</span><span>Custom branding available</span></div>
+      </div>
+    </div>
+
+    <div class="experience-strip" aria-label="Available Proper Shot experiences">
+      <div class="wrap experience-strip-inner">
+        <span>Espresso</span><span>Matcha</span><span>Signature Drinks</span><span>Custom Menus</span><span>Branded Cups</span>
+      </div>
+    </div>
+
+    <div class="wrap booking-builder" id="bookingBuilder">
       <div class="booking-head">
-        <span class="start-hint">Start Here</span>
-        <h2>What are you planning?</h2>
-        <p>Choose your event type to get started. You’ll move through a few quick steps, then we’ll review everything and send your final quote.</p>
+        <span class="start-hint">Your Event</span>
+        <h2>Build your coffee experience.</h2>
+        <p>Answer a few quick questions. We’ll review the details and follow up with availability and your personalized quote.</p>
       </div>
 
       <div class="wizard">
@@ -465,6 +515,8 @@ footer p{margin-bottom:5px;color:var(--muted)}
   var progressLabel = document.getElementById('progressLabel');
   var progressName = document.getElementById('progressName');
   var guestCount = document.getElementById('guestCount');
+  var startBooking = document.getElementById('startBooking');
+  var bookingBuilder = document.getElementById('bookingBuilder');
   var names = ['Event','Experience','Details','Guests','Customize','Contact'];
   var current = 0;
 
@@ -553,6 +605,19 @@ footer p{margin-bottom:5px;color:var(--muted)}
     document.getElementById('startingPriceNote').textContent=
       'Your selected experience starts at $'+startingPrice+
       '. Your final quote is confirmed after we review guest count, service time, location, and selected customizations.';
+  }
+
+  function openBooking(){
+    if(!bookingBuilder){return;}
+    bookingBuilder.classList.add('open');
+    setTimeout(function(){
+      bookingBuilder.scrollIntoView({behavior:'smooth',block:'start'});
+    },60);
+  }
+
+  if(startBooking){startBooking.addEventListener('click',openBooking);}
+  if(window.location.hash==='#book'){
+    // Keep the premium intro visible first; the builder opens only after the visitor chooses to start.
   }
 
   document.querySelectorAll('.next').forEach(function(btn){
