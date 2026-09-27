@@ -112,10 +112,10 @@ form{padding:34px 36px 38px}
 .choice-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
 .choice{position:relative;display:block}
 .choice input{position:absolute;opacity:0;pointer-events:none}
-.choice-body{height:100%;padding:20px;border:1.5px solid #d8dad4;border-radius:15px;background:#fff;cursor:pointer;transition:.18s}
+.choice-body{display:block;height:100%;padding:20px;border:1.5px solid #d8dad4;border-radius:15px;background:#fff;cursor:pointer;transition:.18s}
 .choice-body strong{display:block;margin-bottom:5px;color:var(--green)}
 .choice-body span{display:block;color:var(--muted);font-size:.9rem}
-.choice input:checked + .choice-body{border-color:var(--green);background:#f0f4f1;box-shadow:0 0 0 2px rgba(24,55,47,.08)}
+.choice input:checked + .choice-body{border-color:var(--green);background:#f0f4f1;box-shadow:0 0 0 2px rgba(24,55,47,.08)}.choice-body:active{transform:scale(.995)}
 .fields{display:grid;grid-template-columns:1fr 1fr;gap:17px}
 label.field{display:grid;gap:7px;color:var(--green);font-size:.84rem;font-weight:780}
 .field.full{grid-column:1/-1}
@@ -163,6 +163,7 @@ footer p{margin-bottom:5px;color:rgba(255,255,255,.68)}
   .gallery figure:first-child{grid-row:auto}
   .gallery figure:last-child{grid-column:1/-1}
 }
+.auto-advance .form-actions .next{display:none}
 @media(max-width:650px){
   .wrap{width:min(100% - 28px,1160px)}
   .section{padding:68px 0}
@@ -184,7 +185,7 @@ footer p{margin-bottom:5px;color:rgba(255,255,255,.68)}
   .price-card{padding:30px 23px}
   .wizard-top{padding:20px 20px 17px}
   form{padding:26px 20px 28px}
-  .choice-grid,.fields,.addons,.summary-grid{grid-template-columns:1fr}
+  .choice-grid,.fields,.addons,.summary-grid{grid-template-columns:1fr}.choice-grid{gap:12px}.choice-body{padding:18px 17px}.choice-body strong{font-size:1.08rem}.choice-body span{font-size:.92rem;line-height:1.45}
   .field.full{grid-column:auto}
   .form-actions{flex-direction:column-reverse}
   .form-actions .button{width:100%}
@@ -347,7 +348,7 @@ footer p{margin-bottom:5px;color:rgba(255,255,255,.68)}
         <form name="booking" method="POST" data-netlify="true" action="/thanks.html" id="quoteForm">
           <input type="hidden" name="form-name" value="booking">
 
-          <section class="form-step active" data-step="1">
+          <section class="form-step active auto-advance" data-step="1">
             <h3>What are you planning?</h3>
             <p class="step-intro">Choose the type of event that best fits your plans.</p>
             <div class="choice-grid">
@@ -361,7 +362,7 @@ footer p{margin-bottom:5px;color:rgba(255,255,255,.68)}
             <div class="form-actions"><span></span><button type="button" class="button next">Continue</button></div>
           </section>
 
-          <section class="form-step" data-step="2">
+          <section class="form-step auto-advance" data-step="2">
             <h3>Choose your coffee experience.</h3>
             <p class="step-intro">This gives us the best starting point for your quote.</p>
             <div class="choice-grid">
@@ -547,6 +548,15 @@ footer p{margin-bottom:5px;color:rgba(255,255,255,.68)}
     if(validateStep()) showStep(current+1);
   }));
   document.querySelectorAll('.back').forEach(btn=>btn.addEventListener('click',()=>showStep(current-1)));
+
+  document.querySelectorAll('.auto-advance input[type="radio"]').forEach(radio=>{
+    radio.addEventListener('change',()=>{
+      const stepIndex = steps.indexOf(radio.closest('.form-step'));
+      if(stepIndex===current){
+        setTimeout(()=>showStep(current+1),180);
+      }
+    });
+  });
 
   form.addEventListener('submit',function(e){
     if(!validateStep()) e.preventDefault();
