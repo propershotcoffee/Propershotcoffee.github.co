@@ -402,11 +402,11 @@ footer p{margin-bottom:5px;color:var(--muted)}
 
           <section class="form-step auto-advance" data-step="2">
             <h3>Choose your coffee experience.</h3>
-            <p class="step-intro">Tap one option to continue. These are starting prices; your final quote comes after we review the full event details.</p>
+            <p class="step-intro">Tap one option to continue. Starting prices reflect our private-event service minimum; your final quote depends on guest count, service time, location, and customizations.</p>
             <div class="choice-grid">
-              <label class="choice"><input type="radio" name="service" value="Espresso Bar" required><span class="choice-body"><strong>Espresso Bar · Starting at $700</strong><span>Fresh espresso classics served hot or iced.</span></span></label>
-              <label class="choice"><input type="radio" name="service" value="Espresso + Matcha Bar"><span class="choice-body"><strong>Espresso + Matcha Bar · Starting at $800</strong><span>Espresso service plus matcha options for your guests.</span></span></label>
-              <label class="choice"><input type="radio" name="service" value="Signature Drinks Experience"><span class="choice-body"><strong>Signature Drinks Experience · Starting at $850</strong><span>Espresso service with featured or event-specific signature drinks.</span></span></label>
+              <label class="choice"><input type="radio" name="service" value="Espresso Bar" required><span class="choice-body"><strong>Espresso Bar · Starting at $650</strong><span>Espresso, Americano, cappuccino & latte, with hot and iced options.</span></span></label>
+              <label class="choice"><input type="radio" name="service" value="Espresso + Matcha Bar"><span class="choice-body"><strong>Espresso + Matcha Bar · Starting at $750</strong><span>Everything in the Espresso Bar, plus hot and iced matcha.</span></span></label>
+              <label class="choice"><input type="radio" name="service" value="Signature Drinks Experience"><span class="choice-body"><strong>Signature Drinks Experience · Starting at $850</strong><span>Espresso + matcha service, plus your choice of 2 drinks from our signature or seasonal menu.</span></span></label>
             </div>
             <div class="form-error" id="error2">Please choose a service.</div>
             <div class="form-actions"><button type="button" class="button back">Back</button><button type="button" class="button next">Continue</button></div>
@@ -599,12 +599,12 @@ footer p{margin-bottom:5px;color:var(--muted)}
     document.getElementById('sumTime').textContent=val('service-time')||'—';
 
     var service=val('service');
-    var startingPrice=700;
-    if(service==='Espresso + Matcha Bar'){startingPrice=800;}
+    var startingPrice=650;
+    if(service==='Espresso + Matcha Bar'){startingPrice=750;}
     if(service==='Signature Drinks Experience'){startingPrice=850;}
     document.getElementById('startingPriceNote').textContent=
       'Your selected experience starts at $'+startingPrice+
-      '. Your final quote is confirmed after we review guest count, service time, location, and selected customizations.';
+      '. This is an event-service minimum, not a per-person price. Your final quote is confirmed after we review guest count, service time, location, and selected customizations.';
   }
 
   function openBooking(){
