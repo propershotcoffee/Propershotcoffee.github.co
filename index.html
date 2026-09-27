@@ -143,7 +143,7 @@ form{padding:34px 36px 38px}
 .fields{display:grid;grid-template-columns:1fr 1fr;gap:17px}
 label.field{display:grid;gap:7px;color:var(--green);font-size:.84rem;font-weight:780}
 .field.full{grid-column:1/-1}
-input[type=text],input[type=email],input[type=tel],input[type=date],select,textarea{width:100%;padding:14px 15px;border:1px solid #d4d6d0;border-radius:10px;background:#fff;color:var(--ink)}
+input[type=text],input[type=email],input[type=tel],input[type=date],input[type=number],select,textarea{width:100%;padding:14px 15px;border:1px solid #d4d6d0;border-radius:10px;background:#fff;color:var(--ink)}
 input:focus,select:focus,textarea:focus{outline:2px solid rgba(23,59,50,.15);border-color:var(--green)}
 textarea{min-height:112px;resize:vertical}
 .addons{display:grid;grid-template-columns:1fr 1fr;gap:12px}
@@ -426,12 +426,11 @@ footer p{margin-bottom:5px;color:var(--muted)}
 
           <section class="form-step" data-step="4">
             <h3>How many guests and how long?</h3>
-            <p class="step-intro">Guest count starts at 25 and increases in 5-person increments.</p>
+            <p class="step-intro">Enter your best estimate for the event — the final count can change later.</p>
             <div class="fields">
               <label class="field">Estimated Guest Count
-                <select name="guests" id="guestCount" required>
-                  <option value="" disabled selected>Select guest count</option>
-                </select>
+                <input type="number" name="guests" min="25" step="1" inputmode="numeric" placeholder="e.g. 27" required>
+                <small style="font-weight:500;color:var(--muted)">An estimate is perfectly fine. Minimum 25 guests.</small>
               </label>
               <label class="field">Service Time
                 <select name="service-time" required>
@@ -440,7 +439,7 @@ footer p{margin-bottom:5px;color:var(--muted)}
                 </select>
               </label>
             </div>
-            <div class="form-error" id="error4">Please choose guest count and service time.</div>
+            <div class="form-error" id="error4">Please enter your estimated guest count and choose a service time.</div>
             <div class="form-actions"><button type="button" class="button back">Back</button><button type="button" class="button next">Continue</button></div>
           </section>
 
@@ -513,7 +512,6 @@ footer p{margin-bottom:5px;color:var(--muted)}
   var progressBar = document.getElementById('progressBar');
   var progressLabel = document.getElementById('progressLabel');
   var progressName = document.getElementById('progressName');
-  var guestCount = document.getElementById('guestCount');
   var startBooking = document.getElementById('startBooking');
   var bookingBuilder = document.getElementById('bookingBuilder');
   var names = ['Event','Experience','Details','Guests','Customize','Contact'];
