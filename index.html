@@ -517,23 +517,6 @@ footer p{margin-bottom:5px;color:var(--muted)}
   var names = ['Event','Experience','Details','Guests','Customize','Contact'];
   var current = 0;
 
-  for(var n=25;n<=200;n+=5){
-    var option=document.createElement('option');
-    option.value=String(n);
-    option.textContent=String(n);
-    guestCount.appendChild(option);
-  }
-  [250,300,350].forEach(function(n){
-    var option=document.createElement('option');
-    option.value=String(n);
-    option.textContent=String(n);
-    guestCount.appendChild(option);
-  });
-  var large=document.createElement('option');
-  large.value='400+';
-  large.textContent='400+';
-  guestCount.appendChild(large);
-
   function showStep(index){
     current=Math.max(0,Math.min(index,steps.length-1));
     steps.forEach(function(step,i){step.classList.toggle('active',i===current);});
