@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://propershotcoffee.com/sitemap.xml
